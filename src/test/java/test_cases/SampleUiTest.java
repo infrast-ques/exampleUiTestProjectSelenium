@@ -34,11 +34,11 @@ public class SampleUiTest {
     }
 
     @Test
-    @DisplayName("Проверка заголовка")
+    @DisplayName("Проверка заголовка главной страницы")
     public void checkTsumTitle() {
         homePage = new HomePage(driver)
                 .openPage();
-        assertThat(homePage.getTitle(), is(homePage.title));
+        assertThat(driver.getTitle(), is(homePage.title));
     }
 
     @Test

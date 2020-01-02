@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3a91afa-1708-48b9-bfca-13d695827cf0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/PageObjects/RegistrationPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/ProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/ProfilePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test_cases/SampleUiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test_cases/SampleUiTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/driverConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/driverConfig.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/test_ui_project.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/test_ui_project.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/GetDataForTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/GetDataForTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/HomePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/LoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/ProfilePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/ProfilePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/driverConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/driverConfig.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/drivers/GetPropertiesForDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/drivers/GetPropertiesForDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/drivers/SetupDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/drivers/SetupDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/drivers/myChromeDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/drivers/myChromeDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/drivers/myPhantomJSDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/drivers/myPhantomJSDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test_cases/SampleUiTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test_cases/SampleUiTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +54,7 @@
       <recent name="C:\Users\yanagibitipogib\Desktop\test_ui_project\src\test\resources\drivers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SampleUiTest">
+  <component name="RunManager" selected="JUnit.SampleUiTest.checkTsumTitle">
     <configuration name="SampleUiTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test_ui_project" />
       <option name="PACKAGE_NAME" value="test_cases" />
@@ -118,7 +96,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SampleUiTest.checkRegisterNewAccount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SampleUiTest.checkTsumTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test_ui_project" />
       <extension name="coverage">
         <pattern>
@@ -128,13 +106,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="test_cases" />
       <option name="MAIN_CLASS_NAME" value="test_cases.SampleUiTest" />
-      <option name="METHOD_NAME" value="checkRegisterNewAccount" />
+      <option name="METHOD_NAME" value="checkTsumTitle" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SampleUiTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SampleUiTest.shouldLoginAndLogout" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test_ui_project" />
       <extension name="coverage">
         <pattern>
@@ -144,7 +122,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="test_cases" />
       <option name="MAIN_CLASS_NAME" value="test_cases.SampleUiTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="METHOD_NAME" value="shouldLoginAndLogout" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,11 +130,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SampleUiTest.checkTsumTitle" />
+        <item itemvalue="JUnit.SampleUiTest.shouldLoginAndLogout" />
         <item itemvalue="JUnit.SampleUiTest" />
         <item itemvalue="JUnit.SampleUiTest.checkFLCRegisterFields" />
         <item itemvalue="JUnit.SampleUiTest.checkFLCRegistrationAtAlreadyUsedEmail" />
-        <item itemvalue="JUnit.SampleUiTest.checkRegisterNewAccount" />
-        <item itemvalue="JUnit.SampleUiTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -230,25 +208,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="851" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577914891712" />
-    <state width="1460" height="292" key="GridCell.Tab.0.bottom" timestamp="1577988773327">
+    <state width="1460" height="292" key="GridCell.Tab.0.bottom" timestamp="1577992120224">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1460" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577988773327" />
+    <state width="1460" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577992120224" />
     <state width="1236" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1280.1024@1920.0.1280.1024" timestamp="1577978149006" />
-    <state width="1460" height="292" key="GridCell.Tab.0.center" timestamp="1577988773327">
+    <state width="1460" height="292" key="GridCell.Tab.0.center" timestamp="1577992120224">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1460" height="292" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577988773327" />
+    <state width="1460" height="292" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577992120224" />
     <state width="1236" height="292" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1280.1024@1920.0.1280.1024" timestamp="1577978149006" />
-    <state width="1460" height="292" key="GridCell.Tab.0.left" timestamp="1577988773327">
+    <state width="1460" height="292" key="GridCell.Tab.0.left" timestamp="1577992120224">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1460" height="292" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577988773327" />
+    <state width="1460" height="292" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577992120224" />
     <state width="1236" height="292" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1280.1024@1920.0.1280.1024" timestamp="1577978149006" />
-    <state width="1460" height="292" key="GridCell.Tab.0.right" timestamp="1577988773327">
+    <state width="1460" height="292" key="GridCell.Tab.0.right" timestamp="1577992120224">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1460" height="292" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577988773327" />
+    <state width="1460" height="292" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577992120224" />
     <state width="1236" height="292" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1280.1024@1920.0.1280.1024" timestamp="1577978149006" />
     <state width="1236" height="292" key="GridCell.Tab.1.bottom" timestamp="1577978149006">
       <screen x="1920" y="0" width="1280" height="1024" />
