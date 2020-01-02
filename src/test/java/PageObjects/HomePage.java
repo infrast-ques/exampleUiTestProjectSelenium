@@ -12,6 +12,7 @@ public class HomePage{
 
     private WebDriver driver;
     private WebDriverWait wait;
+    final public String title = "ЦУМ - интернет-магазин одежды, обуви и аксессуаров ведущих мировых брендов";
 
     @FindBy (css = "div.header__private a")
     private WebElement buttonLogin;
@@ -34,7 +35,7 @@ public class HomePage{
         return new HomePage(driver);
     }
 
-    public LoginPage clickButtonLoginPage(){
+    public LoginPage openLoginPage(){
         buttonLogin.click();
         //wait.until(ExpectedConditions.titleIs("Персональные данные"));
         return new LoginPage(driver);

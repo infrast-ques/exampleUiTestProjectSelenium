@@ -6,12 +6,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProfilePage {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    final public String title = "Персональные данные";
 
     @FindBy(xpath = "//div[@class='personal__menu']//li[last()]")
     private WebElement buttonExit;
@@ -35,7 +37,9 @@ public class ProfilePage {
 
     public HomePage logout(){
         buttonExit.click();
-        return new HomePage(driver);
+        HomePage homePage = new HomePage(driver);
+        wait.until(ExpectedConditions.titleIs(homePage.title));
+        return homePage;
     }
 
 }

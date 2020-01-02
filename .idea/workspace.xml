@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3a91afa-1708-48b9-bfca-13d695827cf0" name="Default Changelist" comment="" />
+    <list default="true" id="d3a91afa-1708-48b9-bfca-13d695827cf0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/PageObjects/RegistrationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/ProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/ProfilePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test_cases/SampleUiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test_cases/SampleUiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/driverConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/driverConfig.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/test_ui_project.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/test_ui_project.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/GetDataForTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/GetDataForTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/LoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/ProfilePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/ProfilePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/driverConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/driverConfig.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/drivers/GetPropertiesForDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/drivers/GetPropertiesForDriver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/drivers/SetupDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/drivers/SetupDriver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/drivers/myChromeDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/drivers/myChromeDriver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/drivers/myPhantomJSDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/drivers/myPhantomJSDriver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test_cases/SampleUiTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test_cases/SampleUiTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +40,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Uz7LBdjNCEMDmgxU8GTMmX3w8q" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -23,6 +52,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -47,13 +77,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.SampleUiTest">
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test" />
-      <module name="test_ui_project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SampleUiTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test_ui_project" />
       <option name="PACKAGE_NAME" value="test_cases" />
@@ -63,31 +86,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SampleUiTest.checkValidWorkMatchers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SampleUiTest.checkFLCRegisterFields" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test_ui_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test_cases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="PACKAGE_NAME" value="test_cases" />
       <option name="MAIN_CLASS_NAME" value="test_cases.SampleUiTest" />
-      <option name="METHOD_NAME" value="checkValidWorkMatchers" />
+      <option name="METHOD_NAME" value="checkFLCRegisterFields" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SampleUiTest.checkValidWorkMatchers1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SampleUiTest.checkFLCRegistrationAtAlreadyUsedEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test_ui_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test_cases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="PACKAGE_NAME" value="test_cases" />
       <option name="MAIN_CLASS_NAME" value="test_cases.SampleUiTest" />
-      <option name="METHOD_NAME" value="checkValidWorkMatchers1" />
+      <option name="METHOD_NAME" value="checkFLCRegistrationAtAlreadyUsedEmail" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SampleUiTest.checkValidWorkMatchers2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SampleUiTest.checkRegisterNewAccount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test_ui_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test_cases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="PACKAGE_NAME" value="test_cases" />
       <option name="MAIN_CLASS_NAME" value="test_cases.SampleUiTest" />
-      <option name="METHOD_NAME" value="checkValidWorkMatchers2" />
+      <option name="METHOD_NAME" value="checkRegisterNewAccount" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SampleUiTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test_ui_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test_cases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test_cases" />
+      <option name="MAIN_CLASS_NAME" value="test_cases.SampleUiTest" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -96,10 +153,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.SampleUiTest" />
-        <item itemvalue="Application.test" />
-        <item itemvalue="JUnit.SampleUiTest.checkValidWorkMatchers2" />
-        <item itemvalue="JUnit.SampleUiTest.checkValidWorkMatchers1" />
-        <item itemvalue="JUnit.SampleUiTest.checkValidWorkMatchers" />
+        <item itemvalue="JUnit.SampleUiTest.checkFLCRegisterFields" />
+        <item itemvalue="JUnit.SampleUiTest.checkFLCRegistrationAtAlreadyUsedEmail" />
+        <item itemvalue="JUnit.SampleUiTest.checkRegisterNewAccount" />
+        <item itemvalue="JUnit.SampleUiTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -133,6 +190,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="663" y="177" key="#Project_Structure/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577965232987" />
+    <state x="783" y="169" key="#SampleUiTest.checkFLCRegisterFields" timestamp="1577978685726">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="783" y="169" key="#SampleUiTest.checkFLCRegisterFields/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577978685726" />
     <state x="359" y="100" width="1424" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1577908527015">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -169,38 +230,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="851" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577914891712" />
-    <state width="1562" height="249" key="GridCell.Tab.0.bottom" timestamp="1577969634288">
+    <state width="1460" height="292" key="GridCell.Tab.0.bottom" timestamp="1577988773327">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1562" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577969634288" />
-    <state width="1562" height="249" key="GridCell.Tab.0.center" timestamp="1577969634288">
+    <state width="1460" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577988773327" />
+    <state width="1236" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1280.1024@1920.0.1280.1024" timestamp="1577978149006" />
+    <state width="1460" height="292" key="GridCell.Tab.0.center" timestamp="1577988773327">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1562" height="249" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577969634288" />
-    <state width="1562" height="249" key="GridCell.Tab.0.left" timestamp="1577969634288">
+    <state width="1460" height="292" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577988773327" />
+    <state width="1236" height="292" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1280.1024@1920.0.1280.1024" timestamp="1577978149006" />
+    <state width="1460" height="292" key="GridCell.Tab.0.left" timestamp="1577988773327">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1562" height="249" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577969634288" />
-    <state width="1562" height="249" key="GridCell.Tab.0.right" timestamp="1577969634288">
+    <state width="1460" height="292" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577988773327" />
+    <state width="1236" height="292" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1280.1024@1920.0.1280.1024" timestamp="1577978149006" />
+    <state width="1460" height="292" key="GridCell.Tab.0.right" timestamp="1577988773327">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1562" height="249" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577969634288" />
-    <state width="1512" height="181" key="GridCell.Tab.1.bottom" timestamp="1577390794982">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1460" height="292" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577988773327" />
+    <state width="1236" height="292" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1280.1024@1920.0.1280.1024" timestamp="1577978149006" />
+    <state width="1236" height="292" key="GridCell.Tab.1.bottom" timestamp="1577978149006">
+      <screen x="1920" y="0" width="1280" height="1024" />
     </state>
-    <state width="1512" height="181" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577390794982" />
-    <state width="1512" height="181" key="GridCell.Tab.1.center" timestamp="1577390794982">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1564" height="292" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577978090067" />
+    <state width="1236" height="292" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1280.1024@1920.0.1280.1024" timestamp="1577978149006" />
+    <state width="1236" height="292" key="GridCell.Tab.1.center" timestamp="1577978149006">
+      <screen x="1920" y="0" width="1280" height="1024" />
     </state>
-    <state width="1512" height="181" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577390794982" />
-    <state width="1512" height="181" key="GridCell.Tab.1.left" timestamp="1577390794981">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1564" height="292" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577978090067" />
+    <state width="1236" height="292" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1280.1024@1920.0.1280.1024" timestamp="1577978149006" />
+    <state width="1236" height="292" key="GridCell.Tab.1.left" timestamp="1577978149006">
+      <screen x="1920" y="0" width="1280" height="1024" />
     </state>
-    <state width="1512" height="181" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577390794981" />
-    <state width="1512" height="181" key="GridCell.Tab.1.right" timestamp="1577390794982">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1564" height="292" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577978090067" />
+    <state width="1236" height="292" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1280.1024@1920.0.1280.1024" timestamp="1577978149006" />
+    <state width="1236" height="292" key="GridCell.Tab.1.right" timestamp="1577978149006">
+      <screen x="1920" y="0" width="1280" height="1024" />
     </state>
-    <state width="1512" height="181" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577390794982" />
+    <state width="1564" height="292" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1577978090067" />
+    <state width="1236" height="292" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1280.1024@1920.0.1280.1024" timestamp="1577978149006" />
     <state x="551" y="93" key="SettingsEditor" timestamp="1577394440999">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

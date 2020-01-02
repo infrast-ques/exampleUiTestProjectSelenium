@@ -2,11 +2,7 @@ package test_cases;
 
 import Drivers.SetupDriver;
 import Drivers.myChromeDriver;
-import PageObjects.GetDataForTest;
-import PageObjects.HomePage;
-import PageObjects.LoginPage;
-import PageObjects.ProfilePage;
-import org.junit.Assert;
+import PageObjects.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -24,6 +20,7 @@ public class SampleUiTest {
     HomePage homePage;
     LoginPage loginPage;
     ProfilePage profilePage;
+    RegistrationPage registrationPage;
 
 
     @BeforeEach
@@ -41,7 +38,7 @@ public class SampleUiTest {
     public void checkTsumTitle() {
         homePage = new HomePage(driver)
                 .openPage();
-        assertThat(homePage.getTitle(), is("ЦУМ - интернет-магазин одежды, обуви и аксессуаров ведущих мировых брендов"));
+        assertThat(homePage.getTitle(), is(homePage.title));
     }
 
     @Test
@@ -49,95 +46,75 @@ public class SampleUiTest {
     public void shouldLoginAndLogout() {
         profilePage = new HomePage(driver)
                 .openPage()
-                .clickButtonLoginPage()
+                .openLoginPage()
                 .login(new GetDataForTest().getEmail(), new GetDataForTest().getPassword());
-        assertThat(profilePage.getTitle(), is("Личный кабинет"));
+        assertThat(driver.getTitle(), is(profilePage.title));
 
         homePage = profilePage.logout();
-        assertThat(homePage.getTitle(), is("ЦУМ - интернет-магазин одежды, обуви и аксессуаров ведущих мировых брендов"));
+        assertThat(driver.getTitle(), is(homePage.title));
     }
 
     @Test
     @DisplayName("Авторизация с неверным паролем")
     public void shouldNotLogin() {
-        ArrayList<String> errorText = new LoginPage(driver)
+        loginPage = new LoginPage(driver);
+        profilePage = loginPage
                 .openPage()
-                .loginWhichFails(new GetDataForTest().getEmailUnvalid(), new GetDataForTest().getPasswordUnvalid())
+                .login(new GetDataForTest().getEmailUnvalid(), new GetDataForTest().getPasswordUnvalid());
+        assertThat(driver.getTitle(), equalTo(loginPage.title));
+
+        ArrayList<String> errorText = loginPage
                 .getNoticeText();
-        assertThat(errorText, hasItem(containsString("Неверный логин или пароль")));
+        assertThat(errorText, hasItem(containsString(loginPage.noticeIncorrectPassword)));
     }
 
     @Test
     @DisplayName("Регистрация нового аккаунта")
     public void checkRegisterNewAccount() {
-        ArrayList<String> approveRegistrationText = new LoginPage(driver)
+        loginPage = new LoginPage(driver);
+        registrationPage = loginPage
                 .openPage()
-                .register(new GetDataForTest().getEmail(), new GetDataForTest().getPassword())
-                .getNoticeText();
-        assertEquals(1, approveRegistrationText.size());
-        assertThat(approveRegistrationText, hasItem(containsString("Успешная регистрация")));
+                .registerNewAccount(new GetDataForTest().getEmail(), new GetDataForTest().getPassword());
+        assertThat(driver.getTitle(), containsString(registrationPage.title));
 
-        String profilePageTitle = new ProfilePage(driver)
-                .openPage()
-                .getTitle();
-        assertThat(profilePageTitle, is("Личный кабинет"));
+        ArrayList<String> approveRegistrationNotices = registrationPage.getNoticeText();
+        assertEquals(1, approveRegistrationNotices.size());
+        assertThat(approveRegistrationNotices, hasItem(containsString(registrationPage.approveRegistrationNotice)));
     }
 
     @Test
     @DisplayName("Проверка ФЛК на форме регистрации нового аккаунта")
     public void checkFLCRegisterFields() {
-        ArrayList<String> errorNoticeRegistrationText = new LoginPage(driver)
+        loginPage = new LoginPage(driver);
+        ArrayList<String> errorNoticeRegistrationText = loginPage
                 .openPage()
                 .registerWhichFails("mail.mail", "1234567")
                 .getNoticeText();
-        assertThat(errorNoticeRegistrationText, contains("Указан некорректный email", "Пароль должен быть не менее 8 символов длиной"));
+               assertThat(errorNoticeRegistrationText, containsInAnyOrder(loginPage.noticeIncorrectEmail, loginPage.noticePasswordMustBeHaveMoreThen8Symbols));
+
     }
 
     @Test
     @DisplayName("Создание аккаунта на ранее зарегистрированную почту")
     public void checkFLCRegistrationAtAlreadyUsedEmail() {
-        ArrayList<String> noticeRegistrationText = new LoginPage(driver)
+        loginPage = new LoginPage(driver);
+        ArrayList<String> noticeRegistrationText = loginPage
                 .openPage()
                 .registerWhichFails(new GetDataForTest().getEmail(), new GetDataForTest().getPassword())
                 .getNoticeText();
         assertEquals(1, noticeRegistrationText.size());
         assertThat(noticeRegistrationText, contains("Пользователь с таким email уже существует."));
+        assertThat(loginPage.getTitle(), is("Личный кабинет"));
     }
 
     @Disabled
     @Test
     @DisplayName("Test")
     public void test() {
-        homePage = new HomePage(driver)
-                .openPage();
-        driver.findElement(By.cssSelector("div.header__private a")).click();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        driver.get("https://www.tsum.ru/login/");
+        System.out.println(driver.getTitle());
+        driver.get("https://www.tsum.ru/registration/");
+        System.out.println(driver.getTitle());
     }
-
-
-
-
-
-        /*
-    @Test
-    @Disabled("test not yet ready")
-    // @DisplayName("Check google title, expect result is \"Google\"")
-    public void testShouldCheckGoogleTitle() {
-        System.out.println("huiu");
-        Assert.assertFalse(true);
-        //driver.get("https://www.google.ru/");
-        //assertEquals("Google", driver.getTitle());
-
-
-        //CustomMatcher2 customMatcher2 = new CustomMatcher2();
-        //customMatcher2.title =
-        //       assertThat(driver.getTitle(), customMatcher2.getTitle());
-
-    }*/
-
 
 }

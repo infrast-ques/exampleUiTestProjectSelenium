@@ -25,6 +25,11 @@ public class LoginPage {
         wait = new WebDriverWait(driver, new GetPropertiesForDriver().getWaitTime());
     }
 
+    final public String title = "Онлайн каталог интернет магазина ЦУМ - Вход";
+    final public String noticeIncorrectPassword = "Неверный логин или пароль";
+    final public String noticeIncorrectEmail = "Указан некорректный email";
+    final public String noticePasswordMustBeHaveMoreThen8Symbols = "Пароль должен быть не менее 8 символов длиной";
+
     @FindBy(css = "div.ui-container p.first")
     private WebElement buttonTurnToAuthorization;
 
@@ -43,11 +48,15 @@ public class LoginPage {
     @FindBy(css = "auth-register button[type=submit]")
     private WebElement buttonSubmitRegistration;
 
+    @FindBy(css = "div.ui-h2")
+    private WebElement pageTitle;
+
     private By noticeMessage = By.cssSelector("div[class*=ng-trigger-noticesAnimation] div");
 
 
     public LoginPage openPage() {
         driver.get("https://www.tsum.ru/login/");
+        wait.until(ExpectedConditions.visibilityOf(emailField));
         return new LoginPage(driver);
     }
 
@@ -56,18 +65,14 @@ public class LoginPage {
         emailField.sendKeys(email);
         passwordField.sendKeys(password);
         buttonSubmitLogin.click();
+        try {
+            new WebDriverWait(driver, 1).until(ExpectedConditions.urlToBe("https://www.tsum.ru/personal/profile/"));
+        } catch (Exception e) {
+        }
         return new ProfilePage(driver);
     }
 
-    public LoginPage loginWhichFails(String email, String password) {
-        wait.until(ExpectedConditions.visibilityOf(emailField));
-        emailField.sendKeys(email);
-        passwordField.sendKeys(password);
-        buttonSubmitLogin.click();
-        return this;
-    }
-
-    public LoginPage register(String email, String password) {
+    public RegistrationPage registerNewAccount(String email, String password) {
         wait.until(ExpectedConditions.visibilityOf(emailField));
         buttonTurnToRegistration.click();
         String emailArr[] = email.split("@");
@@ -75,8 +80,9 @@ public class LoginPage {
         emailField.sendKeys(emailArr[0] + simpleDateFormat.format(new Date()) + "@" + emailArr[1]);
         passwordField.sendKeys(password);
         buttonSubmitRegistration.click();
-        return new LoginPage(driver);
+        return new RegistrationPage(driver);
     }
+
     public LoginPage registerWhichFails(String email, String password) {
         wait.until(ExpectedConditions.visibilityOf(emailField));
         buttonTurnToRegistration.click();
@@ -87,14 +93,17 @@ public class LoginPage {
     }
 
     public ArrayList<String> getNoticeText() {
-        ExpectedConditions.visibilityOfElementLocated(noticeMessage);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(noticeMessage));
         List<WebElement> webElements = driver.findElements(noticeMessage);
         ArrayList<String> noticeTextList = new ArrayList<>();
-        for(WebElement element : webElements){
+        for (WebElement element : webElements) {
             noticeTextList.add(element.getText());
-            System.out.println(element.getText());
         }
         return noticeTextList;
+    }
+
+    public String getTitle() {
+        return pageTitle.getText();
     }
 
 
