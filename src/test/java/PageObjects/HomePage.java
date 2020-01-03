@@ -32,7 +32,7 @@ public class HomePage{
     public HomePage openPage(){
         driver.get(new GetDataForTest().getUrlHomePage());
         //wait.until(ExpectedConditions.titleIs("ЦУМ - интернет-магазин одежды, обуви и аксессуаров ведущих мировых брендов"));
-        return new HomePage(driver);
+        return this;
     }
 
     public LoginPage openLoginPage(){

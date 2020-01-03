@@ -32,7 +32,7 @@ public class ProfilePage {
 
     public ProfilePage openPage(){
         driver.get("https://www.tsum.ru/personal/profile/");
-        return new ProfilePage(driver);
+        return this;
     }
 
     public HomePage logout(){

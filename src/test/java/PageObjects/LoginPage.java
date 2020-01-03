@@ -26,8 +26,10 @@ public class LoginPage {
     }
 
     final public String title = "Онлайн каталог интернет магазина ЦУМ - Вход";
+    final public String titleRegistration = "Регистрация";
     final public String noticeIncorrectPassword = "Неверный логин или пароль";
     final public String noticeIncorrectEmail = "Указан некорректный email";
+    final public String noticeEmailIsAlreadyInUse = "Пользователь с таким email уже существует.";
     final public String noticePasswordMustBeHaveMoreThen8Symbols = "Пароль должен быть не менее 8 символов длиной";
 
     @FindBy(css = "div.ui-container p.first")
@@ -57,7 +59,7 @@ public class LoginPage {
     public LoginPage openPage() {
         driver.get("https://www.tsum.ru/login/");
         wait.until(ExpectedConditions.visibilityOf(emailField));
-        return new LoginPage(driver);
+        return this;
     }
 
     public ProfilePage login(String email, String password) {
@@ -74,7 +76,6 @@ public class LoginPage {
 
     public RegistrationPage registerNewAccount(String email, String password) {
         wait.until(ExpectedConditions.visibilityOf(emailField));
-        buttonTurnToRegistration.click();
         String emailArr[] = email.split("@");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yy.hh.mm");
         emailField.sendKeys(emailArr[0] + simpleDateFormat.format(new Date()) + "@" + emailArr[1]);
@@ -83,13 +84,19 @@ public class LoginPage {
         return new RegistrationPage(driver);
     }
 
-    public LoginPage registerWhichFails(String email, String password) {
+    public LoginPage switchToRegister(){
         wait.until(ExpectedConditions.visibilityOf(emailField));
         buttonTurnToRegistration.click();
+        return this;
+    }
+
+
+    public LoginPage registerAccount(String email, String password) {
+        wait.until(ExpectedConditions.visibilityOf(emailField));
         emailField.sendKeys(email);
         passwordField.sendKeys(password);
         buttonSubmitRegistration.click();
-        return new LoginPage(driver);
+        return this;
     }
 
     public ArrayList<String> getNoticeText() {

@@ -4,7 +4,6 @@ import Drivers.SetupDriver;
 import Drivers.myChromeDriver;
 import PageObjects.*;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
@@ -74,6 +73,7 @@ public class SampleUiTest {
         loginPage = new LoginPage(driver);
         registrationPage = loginPage
                 .openPage()
+                .switchToRegister()
                 .registerNewAccount(new GetDataForTest().getEmail(), new GetDataForTest().getPassword());
         assertThat(driver.getTitle(), containsString(registrationPage.title));
 
@@ -88,7 +88,8 @@ public class SampleUiTest {
         loginPage = new LoginPage(driver);
         ArrayList<String> errorNoticeRegistrationText = loginPage
                 .openPage()
-                .registerWhichFails("mail.mail", "1234567")
+                .switchToRegister()
+                .registerAccount("mail.mail", "1234567")
                 .getNoticeText();
                assertThat(errorNoticeRegistrationText, containsInAnyOrder(loginPage.noticeIncorrectEmail, loginPage.noticePasswordMustBeHaveMoreThen8Symbols));
 
@@ -100,11 +101,12 @@ public class SampleUiTest {
         loginPage = new LoginPage(driver);
         ArrayList<String> noticeRegistrationText = loginPage
                 .openPage()
-                .registerWhichFails(new GetDataForTest().getEmail(), new GetDataForTest().getPassword())
+                .switchToRegister()
+                .registerAccount(new GetDataForTest().getEmail(), new GetDataForTest().getPassword())
                 .getNoticeText();
         assertEquals(1, noticeRegistrationText.size());
-        assertThat(noticeRegistrationText, contains("Пользователь с таким email уже существует."));
-        assertThat(loginPage.getTitle(), is("Личный кабинет"));
+        assertThat(noticeRegistrationText, contains(loginPage.noticeEmailIsAlreadyInUse));
+        assertThat(driver.getTitle(), is(loginPage.titleRegistration));
     }
 
     @Disabled
