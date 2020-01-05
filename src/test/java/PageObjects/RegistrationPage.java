@@ -27,7 +27,7 @@ public class RegistrationPage {
     }
 
     public ArrayList<String> getNoticeText() {
-        ExpectedConditions.visibilityOfElementLocated(noticeMessage);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(noticeMessage));
         List<WebElement> webElements = driver.findElements(noticeMessage);
         ArrayList<String> noticeTextList = new ArrayList<>();
         for (WebElement element : webElements) {

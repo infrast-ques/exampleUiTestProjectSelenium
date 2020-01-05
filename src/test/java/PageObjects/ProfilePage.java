@@ -42,4 +42,12 @@ public class ProfilePage {
         return homePage;
     }
 
+    public ProfilePage checkIsProfilePage(){
+        try {
+            wait.until(ExpectedConditions.titleIs(title));
+        } catch (Exception e) {
+            return null;
+        }
+        return this;
+    }
 }

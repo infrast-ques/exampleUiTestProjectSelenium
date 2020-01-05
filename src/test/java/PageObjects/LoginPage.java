@@ -38,7 +38,7 @@ public class LoginPage {
     @FindBy(css = "div.ui-container p.last")
     private WebElement buttonTurnToRegistration;
 
-    @FindBy(css = "input[formcontrolname=email]")
+    @FindBy(css = "auth-layout input[formcontrolname=email]")
     private WebElement emailField;
 
     @FindBy(css = "input[formcontrolname=password]")
@@ -63,18 +63,14 @@ public class LoginPage {
     }
 
     public ProfilePage login(String email, String password) {
-        wait.until(ExpectedConditions.visibilityOf(emailField));
+        wait.until(ExpectedConditions.elementToBeClickable(emailField));
         emailField.sendKeys(email);
         passwordField.sendKeys(password);
         buttonSubmitLogin.click();
-        try {
-            new WebDriverWait(driver, 1).until(ExpectedConditions.urlToBe("https://www.tsum.ru/personal/profile/"));
-        } catch (Exception e) {
-        }
         return new ProfilePage(driver);
     }
 
-    public RegistrationPage registerNewAccount(String email, String password) {
+    public RegistrationPage registrationNewAccount(String email, String password) {
         wait.until(ExpectedConditions.visibilityOf(emailField));
         String emailArr[] = email.split("@");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yy.hh.mm");
@@ -84,14 +80,14 @@ public class LoginPage {
         return new RegistrationPage(driver);
     }
 
-    public LoginPage switchToRegister(){
+    public LoginPage switchToRegistrationForm(){
         wait.until(ExpectedConditions.visibilityOf(emailField));
         buttonTurnToRegistration.click();
         return this;
     }
 
 
-    public LoginPage registerAccount(String email, String password) {
+    public LoginPage registrationAccount(String email, String password) {
         wait.until(ExpectedConditions.visibilityOf(emailField));
         emailField.sendKeys(email);
         passwordField.sendKeys(password);

@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.junit.MatcherAssert.assertThat;
@@ -20,7 +21,12 @@ public class SampleUiTest {
     LoginPage loginPage;
     ProfilePage profilePage;
     RegistrationPage registrationPage;
+    static GetDataForTest getDataForTest;
 
+    @BeforeAll
+    public static void beforeMethod() {
+        getDataForTest = new GetDataForTest();
+    }
 
     @BeforeEach
     public void getDriver() {
@@ -46,7 +52,8 @@ public class SampleUiTest {
         profilePage = new HomePage(driver)
                 .openPage()
                 .openLoginPage()
-                .login(new GetDataForTest().getEmail(), new GetDataForTest().getPassword());
+                .login(getDataForTest.getEmail(), getDataForTest.getPassword())
+                .checkIsProfilePage();
         assertThat(driver.getTitle(), is(profilePage.title));
 
         homePage = profilePage.logout();
@@ -59,7 +66,8 @@ public class SampleUiTest {
         loginPage = new LoginPage(driver);
         profilePage = loginPage
                 .openPage()
-                .login(new GetDataForTest().getEmailUnvalid(), new GetDataForTest().getPasswordUnvalid());
+                .login(getDataForTest.getEmailUnvalid(), getDataForTest.getPasswordUnvalid())
+                .checkIsProfilePage();
         assertThat(driver.getTitle(), equalTo(loginPage.title));
 
         ArrayList<String> errorText = loginPage
@@ -69,12 +77,12 @@ public class SampleUiTest {
 
     @Test
     @DisplayName("Регистрация нового аккаунта")
-    public void checkRegisterNewAccount() {
+    public void shouldRegisteredNewAccount() {
         loginPage = new LoginPage(driver);
         registrationPage = loginPage
                 .openPage()
-                .switchToRegister()
-                .registerNewAccount(new GetDataForTest().getEmail(), new GetDataForTest().getPassword());
+                .switchToRegistrationForm()
+                .registrationNewAccount(getDataForTest.getEmail(), getDataForTest.getPassword());
         assertThat(driver.getTitle(), containsString(registrationPage.title));
 
         ArrayList<String> approveRegistrationNotices = registrationPage.getNoticeText();
@@ -84,25 +92,25 @@ public class SampleUiTest {
 
     @Test
     @DisplayName("Проверка ФЛК на форме регистрации нового аккаунта")
-    public void checkFLCRegisterFields() {
+    public void shouldAppearFLCThatDataInRegistrationFieldsIsInvalid() {
         loginPage = new LoginPage(driver);
         ArrayList<String> errorNoticeRegistrationText = loginPage
                 .openPage()
-                .switchToRegister()
-                .registerAccount("mail.mail", "1234567")
+                .switchToRegistrationForm()
+                .registrationAccount("mail.mail", "1234567")
                 .getNoticeText();
-               assertThat(errorNoticeRegistrationText, containsInAnyOrder(loginPage.noticeIncorrectEmail, loginPage.noticePasswordMustBeHaveMoreThen8Symbols));
+        assertThat(errorNoticeRegistrationText, containsInAnyOrder(loginPage.noticeIncorrectEmail, loginPage.noticePasswordMustBeHaveMoreThen8Symbols));
 
     }
 
     @Test
     @DisplayName("Создание аккаунта на ранее зарегистрированную почту")
-    public void checkFLCRegistrationAtAlreadyUsedEmail() {
+    public void shouldAppearFLCThatEmailAlreadyUsed() {
         loginPage = new LoginPage(driver);
         ArrayList<String> noticeRegistrationText = loginPage
                 .openPage()
-                .switchToRegister()
-                .registerAccount(new GetDataForTest().getEmail(), new GetDataForTest().getPassword())
+                .switchToRegistrationForm()
+                .registrationAccount(getDataForTest.getEmail(), getDataForTest.getPassword())
                 .getNoticeText();
         assertEquals(1, noticeRegistrationText.size());
         assertThat(noticeRegistrationText, contains(loginPage.noticeEmailIsAlreadyInUse));

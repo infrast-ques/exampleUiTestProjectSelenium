@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HomePage{
+public class HomePage {
 
     private WebDriver driver;
     private WebDriverWait wait;
@@ -24,10 +24,6 @@ public class HomePage{
 
     }
 
-    public String getTitle(){
-        wait.until(ExpectedConditions.urlToBe("https://www.tsum.ru/"));
-        return driver.getTitle();
-    }
 
     public HomePage openPage(){
         driver.get(new GetDataForTest().getUrlHomePage());
@@ -36,6 +32,7 @@ public class HomePage{
     }
 
     public LoginPage openLoginPage(){
+        wait.until(ExpectedConditions.elementToBeClickable(buttonLogin));
         buttonLogin.click();
         //wait.until(ExpectedConditions.titleIs("Персональные данные"));
         return new LoginPage(driver);
