@@ -1,6 +1,7 @@
 package PageObjects;
 
 import Drivers.GetPropertiesForDriver;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,11 +34,13 @@ public class ProfilePage {
         return driver.findElement(profilePageTitle).getText();
     }
 
+    @Step("Открыть страницу личного кабинета")
     public ProfilePage openPage(){
         driver.get("https://www.tsum.ru/personal/profile/");
         return this;
     }
 
+    @Step("Выйти из личного кабинета")
     public HomePage logout(){
         buttonExit.click();
         HomePage homePage = new HomePage(driver);
@@ -45,6 +48,7 @@ public class ProfilePage {
         return homePage;
     }
 
+    @Step("Проверить что открыта страница личного кабинета")
     public ProfilePage checkIsProfilePage(){
         try {
             wait.until(ExpectedConditions.titleIs(title));

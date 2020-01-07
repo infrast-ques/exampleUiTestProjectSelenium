@@ -1,6 +1,7 @@
 package PageObjects;
 
 import Drivers.GetPropertiesForDriver;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,7 +18,7 @@ public class HomePage {
     private WebDriverWait wait;
     final public String title = "ЦУМ - интернет-магазин одежды, обуви и аксессуаров ведущих мировых брендов";
 
-    @FindBy (css = "div.header__private a")
+    @FindBy(css = "div.header__private a")
     private WebElement buttonLogin;
 
     public HomePage(WebDriver driver) {
@@ -27,19 +28,21 @@ public class HomePage {
 
     }
 
-
-    public HomePage openPage(){
+    @Step("Открыть домашнюю страницу")
+    public HomePage openPage() {
         driver.get(new GetDataForTest().getUrlHomePage());
         return this;
     }
 
-    public LoginPage openLoginPage(){
+    @Step("Нажать кнопку \"Личный кабинет\"")
+    public LoginPage openLoginPage() {
         wait.until(ExpectedConditions.elementToBeClickable(buttonLogin));
         buttonLogin.click();
         return new LoginPage(driver);
     }
 
-    public HomePage checkIsHomePage(){
+    @Step("Проверить что открыта домашняя страница")
+    public HomePage checkIsHomePage() {
         try {
             wait.until(ExpectedConditions.titleIs(title));
             assertThat(driver.getTitle(), equalTo(title));
@@ -48,7 +51,6 @@ public class HomePage {
         }
         return this;
     }
-
 
 
 }

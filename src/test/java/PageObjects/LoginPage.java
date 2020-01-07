@@ -1,6 +1,7 @@
 package PageObjects;
 
 import Drivers.GetPropertiesForDriver;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -54,13 +55,14 @@ public class LoginPage {
 
     private By noticeMessage = By.cssSelector("div[class*=ng-trigger-noticesAnimation] div");
 
-
+    @Step("Открыть страницу авторизации")
     public LoginPage openPage() {
         driver.get("https://www.tsum.ru/login/");
         wait.until(ExpectedConditions.visibilityOf(emailField));
         return this;
     }
 
+    @Step("Авторизироваться с почтой {email} и паролем {password}")
     public ProfilePage login(String email, String password) {
         wait.until(ExpectedConditions.elementToBeClickable(emailField));
         emailField.sendKeys(email);
@@ -70,13 +72,14 @@ public class LoginPage {
     }
 
 
-
+    @Step("Переключиться на форму регистрации")
     public RegistrationPage switchToRegistrationForm(){
         wait.until(ExpectedConditions.visibilityOf(emailField));
         buttonTurnToRegistration.click();
         return new RegistrationPage(driver);
     }
 
+    @Step("Получить текст уведомлений")
     public ArrayList<String> getNoticeText() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(noticeMessage));
         List<WebElement> webElements = driver.findElements(noticeMessage);
@@ -87,6 +90,7 @@ public class LoginPage {
         return noticeTextList;
     }
 
+    @Step("Проверить что открыта страница авторизации")
     public LoginPage checkIsLoginPagePage(){
         try {
             wait.until(ExpectedConditions.titleIs(title));

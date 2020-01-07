@@ -91,7 +91,7 @@ public class SampleUiTest {
     }
 
     @Test
-    @DisplayName("Проверка ФЛК на форме регистрации нового аккаунта")
+    @DisplayName("Проверка ФЛК для почты и пароля на форме регистрации нового аккаунта")
     public void shouldAppearFLCThatDataInRegistrationFieldsIsInvalid() {
         loginPage = new LoginPage(driver);
         registrationPage = loginPage

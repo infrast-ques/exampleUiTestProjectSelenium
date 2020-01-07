@@ -1,6 +1,7 @@
 package PageObjects;
 
 import Drivers.GetPropertiesForDriver;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -43,16 +44,19 @@ public class RegistrationPage {
 
     By titleBodyLocator = By.cssSelector("div.ui-container div.ui-h2");
 
+    @Step("Регистрация нового аккаунта на случайную почту")
     public RegistrationPage registrationNewAccount(String email, String password) {
         wait.until(ExpectedConditions.visibilityOf(emailField));
         String emailArr[] = email.split("@");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yy.hh.mm");
-        emailField.sendKeys(emailArr[0] + simpleDateFormat.format(new Date()) + "@" + emailArr[1]);
+        String randomEmail = emailArr[0] + simpleDateFormat.format(new Date()) + "@" + emailArr[1];
+        emailField.sendKeys(randomEmail);
         passwordField.sendKeys(password);
         buttonSubmitRegistration.click();
         return this;
     }
 
+    @Step("Регистрация аккаунта с почтой {email} и паролем {password}")
     public RegistrationPage registrationAccount(String email, String password) {
         wait.until(ExpectedConditions.visibilityOf(emailField));
         emailField.sendKeys(email);
@@ -61,6 +65,7 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Получить текст уведомлений")
     public ArrayList<String> getNoticeText() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(noticeMessage));
         List<WebElement> webElements = driver.findElements(noticeMessage);
@@ -71,6 +76,7 @@ public class RegistrationPage {
         return noticeTextList;
     }
 
+    @Step("Проверить что открыта страница регистрации")
     public RegistrationPage checkIsRegistrationPage(){
         try {
             wait.until(ExpectedConditions.titleIs(title));
@@ -80,6 +86,8 @@ public class RegistrationPage {
         }
         return this;
     }
+
+    @Step("Проверить что открыта страница, следующая за регистрацией нового аккаунта")
     public RegistrationPage checkNextPageAfterRegistrationNewAccount(){
         try {
             wait.until(ExpectedConditions.textToBe(titleBodyLocator, titleBody));
