@@ -9,10 +9,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.junit.MatcherAssert.assertThat;
 
 public class LoginPage {
 
@@ -47,8 +48,6 @@ public class LoginPage {
     @FindBy(css = "auth-login button[type=submit]")
     private WebElement buttonSubmitLogin;
 
-    @FindBy(css = "auth-register button[type=submit]")
-    private WebElement buttonSubmitRegistration;
 
     @FindBy(css = "div.ui-h2")
     private WebElement pageTitle;
@@ -70,29 +69,12 @@ public class LoginPage {
         return new ProfilePage(driver);
     }
 
-    public RegistrationPage registrationNewAccount(String email, String password) {
-        wait.until(ExpectedConditions.visibilityOf(emailField));
-        String emailArr[] = email.split("@");
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yy.hh.mm");
-        emailField.sendKeys(emailArr[0] + simpleDateFormat.format(new Date()) + "@" + emailArr[1]);
-        passwordField.sendKeys(password);
-        buttonSubmitRegistration.click();
-        return new RegistrationPage(driver);
-    }
 
-    public LoginPage switchToRegistrationForm(){
+
+    public RegistrationPage switchToRegistrationForm(){
         wait.until(ExpectedConditions.visibilityOf(emailField));
         buttonTurnToRegistration.click();
-        return this;
-    }
-
-
-    public LoginPage registrationAccount(String email, String password) {
-        wait.until(ExpectedConditions.visibilityOf(emailField));
-        emailField.sendKeys(email);
-        passwordField.sendKeys(password);
-        buttonSubmitRegistration.click();
-        return this;
+        return new RegistrationPage(driver);
     }
 
     public ArrayList<String> getNoticeText() {
@@ -105,9 +87,14 @@ public class LoginPage {
         return noticeTextList;
     }
 
-    public String getTitle() {
-        return pageTitle.getText();
+    public LoginPage checkIsLoginPagePage(){
+        try {
+            wait.until(ExpectedConditions.titleIs(title));
+            assertThat(driver.getTitle(), equalTo(title));
+        } catch (Exception e) {
+            return null;
+        }
+        return this;
     }
-
 
 }

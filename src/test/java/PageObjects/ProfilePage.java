@@ -8,6 +8,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import static org.hamcrest.Matchers.*;
+import static org.hamcrest.junit.MatcherAssert.assertThat;
+
 
 public class ProfilePage {
 
@@ -45,6 +48,7 @@ public class ProfilePage {
     public ProfilePage checkIsProfilePage(){
         try {
             wait.until(ExpectedConditions.titleIs(title));
+            assertThat(driver.getTitle(), equalTo(title));
         } catch (Exception e) {
             return null;
         }

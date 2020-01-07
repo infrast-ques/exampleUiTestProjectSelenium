@@ -8,6 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.junit.MatcherAssert.assertThat;
+
 public class HomePage {
 
     private WebDriver driver;
@@ -27,15 +30,23 @@ public class HomePage {
 
     public HomePage openPage(){
         driver.get(new GetDataForTest().getUrlHomePage());
-        //wait.until(ExpectedConditions.titleIs("ЦУМ - интернет-магазин одежды, обуви и аксессуаров ведущих мировых брендов"));
         return this;
     }
 
     public LoginPage openLoginPage(){
         wait.until(ExpectedConditions.elementToBeClickable(buttonLogin));
         buttonLogin.click();
-        //wait.until(ExpectedConditions.titleIs("Персональные данные"));
         return new LoginPage(driver);
+    }
+
+    public HomePage checkIsHomePage(){
+        try {
+            wait.until(ExpectedConditions.titleIs(title));
+            assertThat(driver.getTitle(), equalTo(title));
+        } catch (Exception e) {
+            return null;
+        }
+        return this;
     }
 
 
