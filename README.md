@@ -1,4 +1,4 @@
 # exampleUiTestProject
 For usage need execute command:
-mvn test
+mvn test,
 mvn allure:serve 
